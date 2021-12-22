@@ -3,6 +3,7 @@ import {View, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 
 import HeaderTab from '../components/HeaderTab';
 import SearchBar from '../components/SearchBar';
+import Categories from '../components/Categories';
 
 const HomeScreen = () => {
   return (
@@ -11,6 +12,9 @@ const HomeScreen = () => {
         <View style={styles.headerSection}>
           <HeaderTab />
           <SearchBar />
+        </View>
+        <View style={styles.categoriesSection}>
+          <Categories />
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -24,7 +28,11 @@ const styles = StyleSheet.create({
   },
   headerSection: {
     backgroundColor: '#fff',
-    padding: 20,
+    paddingHorizontal: 18,
+  },
+  categoriesSection: {
+    backgroundColor: '#fff',
+    paddingBottom: 18,
   },
 });
 
