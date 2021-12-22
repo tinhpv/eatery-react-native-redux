@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "805979476569",
+    "project_id": "rn-eatery",
+    "storage_bucket": "rn-eatery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805979476569:android:be2ec8311f9f806c179748",
+        "android_client_info": {
+          "package_name": "com.eatery"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "805979476569-v1dmonk33j51lel9koul220gi2tf9skg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwZD61Ig2tHqBNZpGTRYUdkhYFDz-7Vr0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "805979476569-v1dmonk33j51lel9koul220gi2tf9skg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
