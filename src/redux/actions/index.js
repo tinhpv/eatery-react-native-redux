@@ -5,7 +5,7 @@ export const fetchBusinesses = term => async dispatch => {
     params: {
       term,
       limit: 50,
-      location: 'san jose',
+      location: 'USA',
     },
   });
   dispatch({type: 'FETCH_BUSINESSES', payload: response.data});

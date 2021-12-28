@@ -4,7 +4,6 @@ import {View, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
 import HeaderTab from '../components/HeaderTab';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories';
-import EateryItem from '../components/EateryItem';
 import EateryList from '../components/EateryList';
 
 const HomeScreen = () => {

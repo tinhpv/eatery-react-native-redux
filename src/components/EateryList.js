@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react';
-import {StyleSheet, FlatList, View, Text} from 'react-native';
+import {StyleSheet, FlatList, View, Text, TouchableOpacity} from 'react-native';
 import {connect} from 'react-redux';
 import {fetchBusinesses} from '../redux/actions';
 import EateryItem from './EateryItem';
 
 const EateryList = props => {
   useEffect(() => {
-    props.fetchBusinesses('chicken');
+    props.fetchBusinesses('');
   }, []);
 
   return (
@@ -15,14 +15,16 @@ const EateryList = props => {
         keyExtractor={business => business.id}
         data={props.businesses.businesses}
         renderItem={({item}) => {
-          return <EateryItem business={item} />;
+          return (
+            <TouchableOpacity>
+              <EateryItem business={item} />
+            </TouchableOpacity>
+          );
         }}
       />
     </View>
   );
 };
-
-const styles = StyleSheet.create({});
 
 const mapStateToProps = state => {
   return {businesses: state.businesses};
