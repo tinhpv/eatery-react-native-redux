@@ -10,7 +10,8 @@ const EateryList = props => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
+      <Text style={styles.sectionHeader}>Nearby Eateries</Text>
       <FlatList
         keyExtractor={business => business.id}
         data={props.businesses.businesses}
@@ -25,6 +26,17 @@ const EateryList = props => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    marginHorizontal: 8,
+  },
+  sectionHeader: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginLeft: 6,
+  },
+});
 
 const mapStateToProps = state => {
   return {businesses: state.businesses};

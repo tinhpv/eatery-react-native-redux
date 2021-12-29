@@ -11,11 +11,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.container}>
       {/* <ScrollView> */}
       <View style={styles.headerSection}>
-        <HeaderTab />
         <SearchBar />
-      </View>
-      <View style={styles.categoriesSection}>
-        <Categories />
       </View>
       <View>
         <EateryList />
@@ -28,11 +24,11 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#eee',
+    backgroundColor: '#f3f3f3',
   },
   headerSection: {
-    backgroundColor: '#fff',
     paddingHorizontal: 18,
+    paddingVertical: 18,
   },
   categoriesSection: {
     backgroundColor: '#fff',
