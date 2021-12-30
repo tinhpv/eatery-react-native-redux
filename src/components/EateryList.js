@@ -13,6 +13,7 @@ const EateryList = props => {
     <View style={styles.container}>
       <Text style={styles.sectionHeader}>Nearby Eateries</Text>
       <FlatList
+        scrollEnabled={false}
         keyExtractor={business => business.id}
         data={props.businesses.businesses}
         renderItem={({item}) => {

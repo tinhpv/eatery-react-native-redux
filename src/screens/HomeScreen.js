@@ -1,22 +1,20 @@
 import React from 'react';
-import {View, ScrollView, SafeAreaView, StyleSheet} from 'react-native';
+import {View, ScrollView, SafeAreaView, StyleSheet, Image} from 'react-native';
 
-import HeaderTab from '../components/HeaderTab';
-import SearchBar from '../components/SearchBar';
-import Categories from '../components/Categories';
+import HomeHeader from '../components/HomeHeader';
 import EateryList from '../components/EateryList';
 
 const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
-      {/* <ScrollView> */}
-      <View style={styles.headerSection}>
-        <SearchBar />
-      </View>
-      <View>
-        <EateryList />
-      </View>
-      {/* </ScrollView> */}
+      <ScrollView>
+        <View style={styles.headerSection}>
+          <HomeHeader />
+        </View>
+        <View>
+          <EateryList />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
