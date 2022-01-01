@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Image, StyleSheet, Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import EateryCategory from './EateryCategory';
-import RatingView from './RatingView';
+import EateryCategory from '../components/EateryCategory';
+import RatingView from '../../../components/RatingView';
 
 const EateryItem = ({business}) => {
   const distanceInKm = (business.distance / 1000).toFixed(2);

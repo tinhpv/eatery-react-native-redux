@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, ScrollView, SafeAreaView, StyleSheet, Image} from 'react-native';
 
-import HomeHeader from '../components/HomeHeader';
-import EateryList from '../components/EateryList';
+import HomeHeader from './components/HomeHeader';
+import EateryList from './components/EateryList';
 
 const HomeScreen = () => {
   return (

@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
-import SearchBar from './SearchBar';
-import LocationView from './LocationView';
+import SearchBar from '../../../components/SearchBar';
+import LocationView from '../../../components/LocationView';
 
 const HomeHeader = () => {
   return (
@@ -23,7 +23,7 @@ const HomeHeader = () => {
           bottom: 62,
         }}
       />
-      <SearchBar />
+      <SearchBar placeholder="Search your fav food" />
     </View>
   );
 };
