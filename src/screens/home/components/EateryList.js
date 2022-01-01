@@ -6,9 +6,11 @@ import {fetchBusinesses} from '../../../redux/actions';
 import EateryItem from './EateryItem';
 
 const EateryList = props => {
+  const {searchTerm} = props;
+
   useEffect(() => {
-    props.fetchBusinesses('');
-  }, []);
+    props.fetchBusinesses(searchTerm);
+  }, [searchTerm]);
 
   return (
     <View style={styles.container}>

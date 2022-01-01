@@ -1,10 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 
 import SearchBar from '../../../components/SearchBar';
 import LocationView from '../../../components/LocationView';
 
-const HomeHeader = () => {
+const HomeHeader = ({onSearchSubmit}) => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <View>
       <LocationView />
@@ -13,17 +15,21 @@ const HomeHeader = () => {
         <Text style={styles.slogan}>Find around you</Text>
       </View>
       <Image
-        source={require('../../assets/images/restaurant.png')}
+        source={require('../../../../assets/images/restaurant.png')}
         style={{
-          width: 100,
-          height: 100,
+          width: 170,
+          height: 170,
           resizeMode: 'contain',
           position: 'absolute',
-          right: -25,
-          bottom: 62,
+          right: -45,
         }}
       />
-      <SearchBar placeholder="Search your fav food" />
+      <SearchBar
+        placeholder="Search your fav food"
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        onSubmit={() => onSearchSubmit(searchTerm)}
+      />
     </View>
   );
 };

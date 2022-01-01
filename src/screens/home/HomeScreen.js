@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, ScrollView, SafeAreaView, StyleSheet, Image} from 'react-native';
 
 import HomeHeader from './components/HomeHeader';
 import EateryList from './components/EateryList';
 
 const HomeScreen = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
         <View style={styles.headerSection}>
-          <HomeHeader />
+          <HomeHeader
+            onSearchSubmit={term => {
+              setSearchTerm(term);
+            }}
+          />
         </View>
         <View>
-          <EateryList />
+          <EateryList searchTerm={searchTerm} />
         </View>
       </ScrollView>
     </SafeAreaView>
