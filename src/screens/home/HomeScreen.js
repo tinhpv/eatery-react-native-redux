@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
-import {View, ScrollView, SafeAreaView, StyleSheet, Image} from 'react-native';
+import {View, ScrollView, SafeAreaView, StyleSheet, LogBox} from 'react-native';
 
 import HomeHeader from './components/HomeHeader';
 import EateryList from './components/EateryList';
+
+LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
 const HomeScreen = () => {
   const [searchTerm, setSearchTerm] = useState('');
