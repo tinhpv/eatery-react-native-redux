@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: '#e6e6e6',
     alignItems: 'center',
-    marginTop: 2,
+    marginTop: 1.5,
     borderRadius: 2,
     marginRight: 3,
   },

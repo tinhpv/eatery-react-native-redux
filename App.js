@@ -23,7 +23,11 @@ const HomeStackScreen = () => {
         component={HomeScreen}
         options={{headerShown: false}}
       />
-      <HomeStack.Screen name="Details" component={EateryDetailsScreen} />
+      <HomeStack.Screen
+        name="Details"
+        component={EateryDetailsScreen}
+        options={{headerShown: false}}
+      />
     </HomeStack.Navigator>
   );
 };
@@ -54,7 +58,11 @@ const App = () => {
           tabBarInactiveTintColor: 'gray',
           tabBarShowLabel: false,
         })}>
-        <Tab.Screen name="Home" component={HomeStackScreen} />
+        <Tab.Screen
+          name="Home"
+          component={HomeStackScreen}
+          options={{headerShown: false}}
+        />
         <Tab.Screen name="Order" component={OrderScreen} />
         <Tab.Screen name="Favorite" component={FavoritesScreen} />
         <Tab.Screen name="Profile" component={ProfileScreen} />

@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Image, StyleSheet, Text} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import EateryCategory from '../components/EateryCategory';
+import EateryCategory from '../../../components/EateryCategory';
 import RatingView from '../../../components/RatingView';
 
 const EateryItem = ({business}) => {

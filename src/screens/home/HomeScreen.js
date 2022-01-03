@@ -6,21 +6,21 @@ import EateryList from './components/EateryList';
 
 LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView>
-        <View style={styles.headerSection}>
+        <View key={1} style={styles.headerSection}>
           <HomeHeader
             onSearchSubmit={term => {
               setSearchTerm(term);
             }}
           />
         </View>
-        <View>
-          <EateryList searchTerm={searchTerm} />
+        <View key={2}>
+          <EateryList searchTerm={searchTerm} navigateHandler={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>

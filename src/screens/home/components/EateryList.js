@@ -6,7 +6,7 @@ import {fetchBusinesses} from '../../../redux/actions';
 import EateryItem from './EateryItem';
 
 const EateryList = props => {
-  const {searchTerm} = props;
+  const {searchTerm, navigateHandler} = props;
 
   useEffect(() => {
     props.fetchBusinesses(searchTerm);
@@ -21,7 +21,10 @@ const EateryList = props => {
         data={props.businesses.businesses}
         renderItem={({item}) => {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() =>
+                navigateHandler.navigate('Details', {businessId: item.id})
+              }>
               <EateryItem business={item} />
             </TouchableOpacity>
           );

@@ -10,3 +10,8 @@ export const fetchBusinesses = term => async dispatch => {
   });
   dispatch({type: 'FETCH_BUSINESSES', payload: response.data});
 };
+
+export const fetchBusinessDetails = businessId => async dispatch => {
+  const response = await yelp.get(`/${businessId}`);
+  dispatch({type: 'FETCH_BUSINESS_DETAILS', payload: response.data});
+};
