@@ -47,32 +47,34 @@ const EateryDetailsScreen = props => {
 
   const EateryInfoBox = () => {
     return (
-      <View style={styles.infoContainer}>
-        <Text style={styles.title}>{details.name}</Text>
-        <View style={styles.generalInfo}>
-          <RatingView rating={details.rating} />
-          <Text style={styles.ratingCountText}>
-            {details.review_count} reviews
-          </Text>
-        </View>
-        <View style={styles.generalInfo}>
-          {details.is_claimed ? ClaimedEatery() : UnclaimedEatery()}
-          <Dot />
-          <View style={styles.categories}>
-            {details.categories.map(item => {
-              return <EateryCategory title={item.title} />;
-            })}
+      details && (
+        <View style={styles.infoContainer}>
+          <Text style={styles.title}>{details.name}</Text>
+          <View style={styles.generalInfo}>
+            <RatingView rating={details.rating} />
+            <Text style={styles.ratingCountText}>
+              {details.review_count} reviews
+            </Text>
+          </View>
+          <View style={styles.generalInfo}>
+            {details.is_claimed ? ClaimedEatery() : UnclaimedEatery()}
+            <Dot />
+            <View style={styles.categories}>
+              {details.categories.map(item => {
+                return <EateryCategory title={item.title} />;
+              })}
+            </View>
+          </View>
+          <View style={styles.generalInfo}>
+            <View style={styles.locationView}>
+              <Ionicons name="location-sharp" size={13} color={'#9e9e9e'} />
+              {details.location.display_address.map(location => {
+                return <Text style={styles.location}>{location}</Text>;
+              })}
+            </View>
           </View>
         </View>
-        <View style={styles.generalInfo}>
-          <View style={styles.locationView}>
-            <Ionicons name="location-sharp" size={13} color={'#9e9e9e'} />
-            {details.location.display_address.map(location => {
-              return <Text style={styles.location}>{location}</Text>;
-            })}
-          </View>
-        </View>
-      </View>
+      )
     );
   };
 
