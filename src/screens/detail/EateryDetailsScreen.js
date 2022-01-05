@@ -1,7 +1,11 @@
-import React, {useEffect} from 'react';
-import {View, StyleSheet, ScrollView, Text, Image} from 'react-native';
+import React, {useEffect, useRef} from 'react';
+import {View, StyleSheet, Text, Image, StatusBar} from 'react-native';
 import {connect} from 'react-redux';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import ImageHeaderScrollView, {
+  TriggeringView,
+} from 'react-native-image-header-scroll-view';
+import * as Animatable from 'react-native-animatable';
 
 import {fetchBusinessDetails} from '../../redux/actions';
 import RatingView from '../../components/RatingView';
@@ -40,6 +44,7 @@ const Dot = () => {
 const EateryDetailsScreen = props => {
   const {businessId} = props.route.params;
   const {details} = props;
+  const navTitleView = useRef(null);
 
   useEffect(() => {
     props.fetchBusinessDetails(businessId);
@@ -61,15 +66,19 @@ const EateryDetailsScreen = props => {
             <Dot />
             <View style={styles.categories}>
               {details.categories.map(item => {
-                return <EateryCategory title={item.title} />;
+                return <EateryCategory key={item.title} title={item.title} />;
               })}
             </View>
           </View>
           <View style={styles.generalInfo}>
             <View style={styles.locationView}>
               <Ionicons name="location-sharp" size={13} color={'#9e9e9e'} />
-              {details.location.display_address.map(location => {
-                return <Text style={styles.location}>{location}</Text>;
+              {details.location.display_address.map((location, index) => {
+                return (
+                  <Text key={index} style={styles.location}>
+                    {location}
+                  </Text>
+                );
               })}
             </View>
           </View>
@@ -79,21 +88,52 @@ const EateryDetailsScreen = props => {
   };
 
   return (
-    <ScrollView>
-      <Image
-        source={{
-          uri: details.image_url,
-        }}
-        resizeMode="cover"
-        style={styles.image}
-      />
-      <EateryInfoBox />
-      <MenuItems />
-    </ScrollView>
+    <View style={{flex: 1}}>
+      <StatusBar barStyle="light-content" />
+      <ImageHeaderScrollView
+        minHeight={80}
+        maxHeight={240}
+        renderHeader={() => (
+          <Image
+            source={{
+              uri: details.image_url,
+            }}
+            resizeMode="cover"
+            style={styles.image}
+          />
+        )}
+        renderFixedForeground={() => (
+          <Animatable.View style={styles.navTitleView} ref={navTitleView}>
+            <Text style={styles.navTitle}>{details.name}</Text>
+          </Animatable.View>
+        )}>
+        <TriggeringView
+          onHide={() => navTitleView.current.fadeInUp(250)}
+          onDisplay={() => navTitleView.current.fadeOut(100)}>
+          {}
+        </TriggeringView>
+        <View style={{backgroundColor: '#eee'}}>
+          <EateryInfoBox />
+          <MenuItems />
+        </View>
+      </ImageHeaderScrollView>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  navTitleView: {
+    height: 80,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 40,
+    opacity: 0,
+  },
+  navTitle: {
+    color: 'white',
+    fontSize: 18,
+    backgroundColor: 'transparent',
+  },
   image: {
     width: '100%',
     height: 240,
