@@ -11,7 +11,7 @@ const MenuItems = () => {
       <View>
         {MenuList.map(item => {
           return (
-            <TouchableOpacity>
+            <TouchableOpacity key={item.id}>
               <View style={styles.row}>
                 <Image
                   source={{
