@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TextInput, Text} from 'react-native';
+import {View, StyleSheet, TextInput} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const SearchBar = ({placeholder, searchTerm, setSearchTerm, onSubmit}) => {
