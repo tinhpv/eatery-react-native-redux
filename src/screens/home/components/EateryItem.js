@@ -27,7 +27,7 @@ const EateryItem = ({business}) => {
         </View>
         <View style={styles.categories}>
           {business.categories.map(item => {
-            return <EateryCategory title={item.title} />;
+            return <EateryCategory key={item.title} title={item.title} />;
           })}
         </View>
         <Text style={styles.status(business.isClosed)}>Opening</Text>
