@@ -8,7 +8,7 @@ const SearchBar = ({placeholder, searchTerm, setSearchTerm, onSubmit}) => {
       <Ionicons name="search-outline" size={16} color={'#808080'} />
       <TextInput
         autoCorrect={false}
-        autoComplete={false}
+        autoComplete="off"
         returnKeyType="search"
         style={styles.input}
         placeholder={placeholder}

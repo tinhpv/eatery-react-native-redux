@@ -36,11 +36,11 @@ const RatingView = ({rating}) => {
     <View style={styles.container}>
       {starList.map(item => {
         if (item <= splitRating[0]) {
-          return <FilledStar />;
+          return <FilledStar key={item} />;
         } else if (splitRating[1] === '5' && item === +splitRating[0] + 1) {
-          return <HalfFilledStar />;
+          return <HalfFilledStar key={item} />;
         } else {
-          return <WhiteStar />;
+          return <WhiteStar key={item} />;
         }
       })}
     </View>
