@@ -26,7 +26,12 @@ const HomeStackScreen = () => {
       <HomeStack.Screen
         name="Details"
         component={EateryDetailsScreen}
-        options={{headerShown: false}}
+        options={{
+          headerBackTitleVisible: false,
+          headerTitle: '',
+          headerTintColor: 'white',
+          headerTransparent: true,
+        }}
       />
     </HomeStack.Navigator>
   );

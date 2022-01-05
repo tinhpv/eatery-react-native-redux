@@ -91,7 +91,7 @@ const EateryDetailsScreen = props => {
     <View style={{flex: 1}}>
       <StatusBar barStyle="light-content" />
       <ImageHeaderScrollView
-        minHeight={80}
+        minHeight={90}
         maxHeight={240}
         renderHeader={() => (
           <Image
@@ -123,7 +123,7 @@ const EateryDetailsScreen = props => {
 
 const styles = StyleSheet.create({
   navTitleView: {
-    height: 80,
+    height: 90,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 40,
