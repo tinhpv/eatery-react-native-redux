@@ -37,20 +37,6 @@ const Dot = () => {
   );
 };
 
-const Divider = ({top, left = 0, right = 0, color}) => {
-  return (
-    <View
-      style={{
-        marginTop: top,
-        marginLeft: left,
-        marginRight: right,
-        borderBottomColor: color,
-        borderBottomWidth: 0.5,
-      }}
-    />
-  );
-};
-
 const EateryDetailsScreen = props => {
   const {businessId} = props.route.params;
   const {details} = props;
