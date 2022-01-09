@@ -10,7 +10,7 @@ import * as Animatable from 'react-native-animatable';
 import {fetchBusinessDetails} from '../../redux/actions';
 import RatingView from '../../components/RatingView';
 import EateryCategory from '../../components/EateryCategory';
-import MenuItems from './MenuItems';
+import MenuItems from './components/MenuItems';
 
 const ClaimedEatery = () => {
   return (

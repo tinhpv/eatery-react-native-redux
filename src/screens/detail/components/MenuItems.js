@@ -2,7 +2,7 @@ import React from 'react';
 import {View, StyleSheet, Text, Image, TouchableOpacity} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import MenuList from '../detail/Menus';
+import MenuList from '../data/Menus';
 
 const MenuItems = () => {
   return (
