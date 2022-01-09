@@ -27,6 +27,7 @@ const HomeStackScreen = () => {
         name="Details"
         component={EateryDetailsScreen}
         options={{
+          presentation: 'fullScreenModal',
           headerBackTitleVisible: false,
           headerTitle: '',
           headerTintColor: 'white',
