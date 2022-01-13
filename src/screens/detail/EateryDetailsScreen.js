@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import {View, StyleSheet, Text, Image, StatusBar} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 import {connect} from 'react-redux';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import ImageHeaderScrollView, {
@@ -90,17 +91,24 @@ const EateryDetailsScreen = props => {
   return (
     <View style={{flex: 1}}>
       <StatusBar barStyle="light-content" />
+      <TouchableOpacity
+        containerStyle={{position: 'absolute', left: 16, top: 46}}
+        onPress={() => {}}>
+        <Ionicons name="arrow-back" size={25} color={'white'} />
+      </TouchableOpacity>
       <ImageHeaderScrollView
-        minHeight={90}
+        minHeight={80}
         maxHeight={240}
         renderHeader={() => (
-          <Image
-            source={{
-              uri: details.image_url,
-            }}
-            resizeMode="cover"
-            style={styles.image}
-          />
+          <View>
+            <Image
+              source={{
+                uri: details.image_url,
+              }}
+              resizeMode="cover"
+              style={styles.image}
+            />
+          </View>
         )}
         renderFixedForeground={() => (
           <Animatable.View style={styles.navTitleView} ref={navTitleView}>
@@ -123,7 +131,7 @@ const EateryDetailsScreen = props => {
 
 const styles = StyleSheet.create({
   navTitleView: {
-    height: 90,
+    height: 80,
     justifyContent: 'center',
     alignItems: 'center',
     paddingTop: 40,
